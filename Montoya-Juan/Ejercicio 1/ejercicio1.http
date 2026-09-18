@@ -1,0 +1,10 @@
+@url=http://localhost:3000/api/rectangulos
+
+### Prueba 1: Rectangulo estandar
+GET {{url}}/10/5
+
+### Prueba 2: Caso de Cuadrado
+GET {{url}}/8/8
+
+### Prueba 3: Error por dimension invalida
+GET {{url}}/-2/5

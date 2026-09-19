@@ -1,0 +1,35 @@
+@url=http://localhost:3000/api/tareas
+
+### 1: Crear Tarea 1
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nombre": "Estudiar para el parcial"
+}
+
+### 2: Crear Tarea 2
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nombre": "Hacer las compras"
+}
+
+### 3: Consultar Todas las tareas (Deberia de salir ambas como completadas: false)
+GET {{url}}
+
+### 4: Consultar solo las tareas PENDIENTES
+GET {{url}}?estado=pendiente
+
+### 5: Modificar la Tarea 1 para marcarla como COMPLETADA
+PUT {{url}}/Estudiar%20para%20el%20parcial
+Content-Type: application/json
+
+{
+    "nombre": "Estudiar para el parcial",
+    "completada": true
+}
+
+### 6: Consultar solo las tareas COMPLETADAS
+GET {{url}}?estado=completada

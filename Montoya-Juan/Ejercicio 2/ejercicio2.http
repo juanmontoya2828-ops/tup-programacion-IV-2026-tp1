@@ -1,0 +1,34 @@
+@url=http://localhost:3000/api/alumnos
+
+### 1: Crear un alumno (Promocionado)
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "notas": [8, 9, 10]
+}
+
+### 2: Crear alumno duplicado (Deberia dar error)
+POST {{url}}
+Content-Type: application/json
+
+{
+    "nombre": "juan",
+    "notas": [5, 5, 5]
+}
+
+### 3: Consultar notas y promedio de Juan
+GET {{url}}/Juan
+
+### 4: Modificar notas de Juan (Para que pase a estar Aprobado)
+PUT {{url}}/Juan
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "notas": [6, 6, 7]
+}
+
+### 5: Consultar de nuevo para ver el cambio de condicion
+GET {{url}}/Juan
